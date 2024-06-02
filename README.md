@@ -1,1 +1,2 @@
-# expressSesisonAuthExample
+# Session Authentication Example
+educational
