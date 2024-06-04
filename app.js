@@ -38,6 +38,8 @@ app.post("/auth/", (req, res) => {
     req.session.authID = randomBytes(8).toString("hex");
     req.session.usernInfo = [req.body.username, req.session.authID];
     res.send({ auth: req.session.usernInfo });
+  } else {
+    res.send("User not found").status(404);
   }
 });
 
@@ -66,10 +68,3 @@ app.get("/whoami", (req, res) => {
 });
 
 app.listen(80);
-
-/* usage
-curl -X POST http://localhost/auth \
--c memory -d 'username=klinux&password=123' \
--H "Content-Type: application/x-www-form-urlencoded" \
---next -X GET -c memory http://localhost/status
-*/
