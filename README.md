@@ -1,2 +1,4 @@
 # Session Authentication Example
-educational
+```sh
+./test_.sh klinux 123
+```
